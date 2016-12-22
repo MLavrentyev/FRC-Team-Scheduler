@@ -1,3 +1,5 @@
-table {
+table, th, td {
     font: 15px sans-serif;
+    border: 1px solid black;
+    border-collapse: collapse;
 }
