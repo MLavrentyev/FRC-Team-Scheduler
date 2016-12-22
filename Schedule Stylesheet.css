@@ -1,5 +1,10 @@
-table, th, td {
-    font: 15px sans-serif;
+td {
     border: 1px solid black;
-    border-collapse: collapse;
+    text-align: center;
+}
+td:nth-child(1) {
+    width: 1em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    background-color: red;
 }
