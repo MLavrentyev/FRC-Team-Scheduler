@@ -1,13 +1,15 @@
 table {
     border-spacing: 0;
+    font: 32px "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 tr {
     border-collapse: collapse;
 }
 td {
-    border: 1px solid gray;
+    border: 0.5px solid #C8C8C8;
     text-align: center;
+    padding: 0em 0.5em 0em 0.5em;
 }
 td:nth-child(1) {
     width: 1em;
