@@ -9,7 +9,12 @@ function refreshSchedule() {
 
 function refreshTimer() {
 	"use strict";
-	timeToRefresh -= 1;
 	document.getElementById("refreshTime").innerHTML = timeToRefresh;
+	timeToRefresh -= 1;
+	if (timeToRefresh === 0) {
+		timeToRefresh = 30;
+		document.getElementById("refreshTime").innerHTML = "Refreshing...";
+		refreshSchedule();
+	}
 	setTimeout(refreshTimer, 1000);
 }
