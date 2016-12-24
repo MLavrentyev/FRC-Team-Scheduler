@@ -1,17 +1,18 @@
 var frcApiBaseLink = "https://frc-api.firstinspires.org/v2.0/";
+var TBAapiBaseLink = "https://thebluealliance.com/api/v2/";
 var timeToRefresh = 30;
-var refreshing = false;
 
-var year;
-var eventKey;
-var teamNumber;
+var currentMatch = 1;
+var year = (new Date()).getFullYear();
+var eventKey = "CTWAT";
+var teamNumber = 4557;
 
 
 function refreshSchedule() {
     "use strict";
 	var httpsRequest = new XMLHttpRequest();
 	
-	httpsRequest.open("GET", frcApiBaseLink + year + "/schedule/" + eventKey + "?tournamentLevel=&teamNumber=" + teamNumber, false);
+	httpsRequest.open("GET", frcApiBaseLink + year + "/schedule/" + eventKey + "?tournamentLevel=&teamNumber=" + teamNumber + "&start=" + currentMatch, false);
 	httpsRequest.setRequestHeader("Accept", "application/json");
 	httpsRequest.setRequestHeader("User-Agent", "");
 }
@@ -30,4 +31,19 @@ function refreshTimer() {
 	timeToRefresh -= 1;
 	
 	setTimeout(refreshTimer, 1000);
+}
+function setFootnoteInfo() {
+	"use strict";
+	
+	document.getElementById("eventName").innerHTML = eventKey;
+	document.getElementById("teamNumber").innerHTML = teamNumber;
+	var httpsRequest = new XMLHttpRequest(),
+		response;
+	
+	httpsRequest.open("GET", TBAapiBaseLink + "event/" + year + eventKey);
+	httpsRequest.setRequestHeader("X-TBA-App-Id", "mlavrentyev:liveMatchSchedule:v1");
+	httpsRequest.setRequestHeader("User-Agent", "liveScheduleUpdater");
+	
+	response = JSON.parse(httpsRequest);
+	document.getElementById("eventName").innerHTML = response.name;
 }

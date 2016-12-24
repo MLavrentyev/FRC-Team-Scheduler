@@ -45,21 +45,28 @@ td:nth-child(7) {
     background-color: #9696FF;
 }
 #footnotes {
-	position: absolute;
-	bottom: 0;
+	position: fixed;
+	bottom: 10px;
+	left: 0px;
 	width: 100%;
 	height: 40px;
+	
+	border-top: solid 3px #B3B3B3;
 }
 #eventNameDiv {
-	float: left;
+	position: fixed;
+	font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 600;
+	left: 5px;
+	bottom: 5px;
 }
 #teamNumberDiv {
-	float: left;
 }
 #refreshDiv {
-	float: left;
-	position: relative;
-	right: 0;
+	position: fixed;
+	right: 5px;
+	bottom: 5px;
+	
 	display: table;
 }
 
