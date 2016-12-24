@@ -38,14 +38,46 @@ td:nth-child(6) {
 td:nth-child(7) {
     background-color: #9696FF;
 }
+#footnotes {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+}
+#eventNameDiv {
+	float: left;
+}
+#teamNumberDiv {
+	float: left;
+}
+#refreshDiv {
+	float: left;
+	position: relative;
+	right: 0;
+	display: table;
+}
 
-.loader {
-	border: 5px solid #f3f3f3; /* Light grey */
-    border-top: 5px solid blue; /* Blue */
-	border-bottom: 5px solid red;
+#refreshTime {
+	font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 600;
+	vertical-align: middle;
+	display: table-cell;
+}
+#loaderContainer {
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	padding: 10px 10px 10px 10px;
+}
+#loader {
+	/*visibility: hidden; /* Keep hidden until refreshing */
+	
+	border: 4px solid #f3f3f3;
+    border-top: 4px solid blue;
+	border-bottom: 4px solid red;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 10px;
     animation: spin 2s linear infinite;
 }
 @keyframes spin {
