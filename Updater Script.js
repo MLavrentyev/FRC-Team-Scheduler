@@ -35,14 +35,14 @@ function refreshTimer() {
 function setFootnoteInfo() {
 	"use strict";
 	
-	document.getElementById("eventName").innerHTML = eventKey;
-	document.getElementById("teamNumber").innerHTML = teamNumber;
+	document.getElementById("teamNumber").innerHTML = "FRC " + teamNumber;
 	var httpsRequest = new XMLHttpRequest(),
 		response;
 	
 	httpsRequest.open("GET", TBAapiBaseLink + "event/" + year + eventKey);
 	httpsRequest.setRequestHeader("X-TBA-App-Id", "mlavrentyev:liveMatchSchedule:v1");
 	httpsRequest.setRequestHeader("User-Agent", "liveScheduleUpdater");
+	httpsRequest.send();
 	
 	response = JSON.parse(httpsRequest);
 	document.getElementById("eventName").innerHTML = response.name;
