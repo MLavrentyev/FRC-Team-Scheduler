@@ -11,7 +11,7 @@ function refreshSchedule() {
     "use strict";
 	var httpsRequest = new XMLHttpRequest();
 	
-	httpsRequest.open("GET", frcApiBaseLink + year + "/schedule/" + eventKey + "?tournamentLevel=&teamNumber=" + teamNumber, true);
+	httpsRequest.open("GET", frcApiBaseLink + year + "/schedule/" + eventKey + "?tournamentLevel=&teamNumber=" + teamNumber, false);
 	httpsRequest.setRequestHeader("Accept", "application/json");
 	httpsRequest.setRequestHeader("User-Agent", "");
 }
