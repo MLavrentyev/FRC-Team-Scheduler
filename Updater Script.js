@@ -39,11 +39,17 @@ function setFootnoteInfo() {
 	var httpsRequest = new XMLHttpRequest(),
 		response;
 	
-	httpsRequest.open("GET", TBAapiBaseLink + "event/" + year + eventKey);
+	httpsRequest.open("GET", TBAapiBaseLink + "event/" + year + eventKey, false);
 	httpsRequest.setRequestHeader("X-TBA-App-Id", "mlavrentyev:liveMatchSchedule:v1");
 	httpsRequest.setRequestHeader("User-Agent", "liveScheduleUpdater");
-	httpsRequest.send();
-	
+	httpsRequest.send(null);
+
 	response = JSON.parse(httpsRequest);
 	document.getElementById("eventName").innerHTML = response.name;
+}
+function startOnPageLoad() {
+	"use strict";
+	
+	setFootnoteInfo();
+	refreshTimer();
 }
