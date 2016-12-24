@@ -46,6 +46,7 @@ td:nth-child(7) {
 }
 #footnotes {
 	position: fixed;
+	opacity: 40%;
 	bottom: 10px;
 	left: 0px;
 	width: 100%;
@@ -58,16 +59,19 @@ td:nth-child(7) {
 	font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-weight: 600;
 	left: 5px;
-	bottom: 5px;
+	bottom: 14px;
 }
 #teamNumberDiv {
+	position: relative;
+	font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 600;
+	text-align: center;
 }
 #refreshDiv {
 	position: fixed;
-	right: 5px;
 	bottom: 5px;
-	
-	display: table;
+	right: 5px;
+	text-align: center;
 }
 
 #refreshTime {
