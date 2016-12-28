@@ -3,7 +3,7 @@
 	<head>
 		<title>FRC Live Match Schedule</title>
 		<link rel="stylesheet" type="text/css" href="Front%20Stylesheet.css">
-		<script type="text/javascript" src="../Main%2520page/Updater%20Script.js"></script>
+		<script src="../Main%20page/Updater%20Script.js"></script>
 		<meta charset="utf-8" />
 	</head>
 	
@@ -11,10 +11,10 @@
 		<div id="titleHeader">
 			<h1>FRC Live Match Schedule</h1>
 		</div>
-		<form id="choices">
+		<form id="choices" onsubmit="event.preventDefault(); validateEntries();" action="../Main page/Schedule.html">
 			<div id="teamNumDiv">
 				<label for="teamNumEntry">Team Number:</label>
-				<input type="number" id="teamNumEntry" />
+				<input type="text" id="teamNumEntry" pattern="[0-9]{1,4}"/>
 			</div>
 			<div id="eventChoiceDropdown" class="dropdown">
 				<select>
@@ -23,7 +23,7 @@
 				</select>
 			</div>
 			<div id="submitDiv" class="button">
-				<button type="button">View Schedule</button>
+				<button type="submit" >View Schedule</button>
 			</div>
 		</form>
 		<div id="footnoteInfo"></div>
