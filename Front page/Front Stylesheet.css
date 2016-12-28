@@ -5,7 +5,9 @@ body {
 	text-align: center;
 	font: 40px "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-
+#teamNumEntry {
+	
+}
 
 select {
 	margin: 50px;
