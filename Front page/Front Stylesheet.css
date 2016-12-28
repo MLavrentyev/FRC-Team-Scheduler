@@ -1,3 +1,12 @@
+body {
+	background: #80e5ff;
+}
+#titleHeader {
+	text-align: center;
+	font: 40px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
 select {
 	margin: 50px;
 	border: 1px solid #111;
@@ -11,7 +20,7 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background: url(first.ico) 96% / 15% no-repeat #2380DC;
+	background: url(dropArrow.ico) 96% / 15% no-repeat #2380DC;
 } 
 /*target Internet Explorer 9 and Internet Explorer 10:*/
 @media screen and (min-width:0\0) { 
@@ -19,4 +28,21 @@ select {
 		background:none;
 		padding: 5px;
 	}
+}
+
+#submitDiv button {
+	margin: 50px;
+	border: 1px solid #111;
+	background: #2380DC;
+	width: 180px;
+	padding: 5px 35px 5px 5px;
+	font-size: 16px;
+	text-align: center;
+	color: white;
+	border: 1px solid #ccc;
+	height: 34px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url(first.ico) 96% / 15% no-repeat #2380DC;
 }
