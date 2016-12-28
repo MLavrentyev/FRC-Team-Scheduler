@@ -16,14 +16,20 @@ function getAllEvents() {
 		if(this.readyState === XMLHttpRequest.DONE) {
 			response = JSON.parse(allEventsRequest.response);
 			for(var i = 0; i < response.length; i +=1) {
-				response[i].short_name;
+				var selector = document.getElementById("eventSelector");
+				if(response[i].short_name == null) {
+					selector.options[selector.options.length] = new Option(response[i].name, response[i].event_code);
+				} else {
+					selector.options[selector.options.length] = new Option(response[i].short_name, response[i].event_code);
+				}
 			}
 		}
 	}
 }
 function validateEntries() {
 	var enteredNumber = document.getElementById("teamNumEntry").value;
-	if(/^[0-9]{1,4}$/.test(enteredNumber)) { // If it's a valid 1 to 4-digit number
+	var enteredEvent = document.getElementById("eventSelector").value;
+	if(/^[0-9]{1,4}$/.test(enteredNumber) && enteredEvent !== "") { // If it's a valid 1 to 4-digit number and valid event choice
 		var teamRequest = new XMLHttpRequest(),
 			response;
 		
@@ -36,16 +42,18 @@ function validateEntries() {
 			
 			if (this.readyState == XMLHttpRequest.DONE) {
 				response = JSON.parse(teamRequest.response);
-				console.log(response.length);
+				
 				for(var i = 0; i < response.length; i++) {
-					console.log(response[i] === year);
 					if(response[i] === year) {
-						teamNumber = parseInt(enteredNumber);
-						console.log(teamNumber);
+						//TODO: Send data to server side language
+						
 						document.getElementById("choices").submit();
 					}
 				}
 			}
 		}
 	}
+}
+function startFront() {
+	getAllEvents();
 }
