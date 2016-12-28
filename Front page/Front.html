@@ -11,19 +11,19 @@
 		<div id="titleHeader">
 			<h1>FRC Live Match Schedule</h1>
 		</div>
-		<form id="choices" onsubmit="event.preventDefault(); validateEntries();" action="../Main page/Schedule.html">
+		<form id="choices" action="../Main page/Schedule.html" method="GET">
 			<div id="teamNumDiv">
 				<label for="teamNumEntry">Team Number:</label>
 				<input type="text" id="teamNumEntry" pattern="[0-9]{1,4}"/>
 			</div>
 			<div id="eventChoiceDropdown" class="dropdown">
 				<select>
-					<option value="" style="display:none">Choose event</option>
+					<option value="" style="display:none" disabled="disabled" selected="selected">Choose event</option>
 					<option value="ctwat">Waterbury</option>
 				</select>
 			</div>
 			<div id="submitDiv" class="button">
-				<button type="submit" >View Schedule</button>
+				<button type="button" onclick="validateEntries()">View Schedule</button>
 			</div>
 		</form>
 		<div id="footnoteInfo"></div>
