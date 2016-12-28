@@ -48,9 +48,7 @@ function setFootnoteInfo() {
 		if (this.readyState === XMLHttpRequest.DONE) {
 			
 			response = JSON.parse(httpsRequest.response);
-			document.getElementById("eventName").innerHTML = response.name;
-			console.log("All's good.");
-			
+			document.getElementById("eventName").innerHTML = response.name;			
 		}
 	};
 }
@@ -78,4 +76,29 @@ function getAllEvents() {
 			}
 		}
 	}
+}
+function validateEntries() {
+	var enteredNumber = document.getElementById("teamNumEntry").value;
+	if(/^[0-9]{1,4}$/.test(enteredNumber)) { // If it's a valid 1 to 4-digit number
+		var teamRequest = new XMLHttpRequest(),
+			response,
+			isParticipating = false;
+		teamRequest.open("GET", TBAapiBaseLink + "team/frc" + enteredNumber + "/years_participated", true);
+		teamRequest.setRequestHeader("X-TBA-App-Id", appID);
+		
+		teamRequest.send();
+		
+		teamRequest.onreadystatechange = function(e) {
+			
+			if (this.readyState === XMLHttpRequest.DONE) {
+				response = JSON.parse(teamRequest.response);
+				
+				for(var i = 0; i < response.length; i++) {
+					if(response[i] === year) {isParticipating=true;}
+				}
+			}
+		}
+	}
+	//TODO: fix how to get isParticipating to wait for request to come through
+	return isParticipating;
 }
