@@ -4,7 +4,7 @@ var appID = "mlavrentyev:liveMatchSchedule:v1";
 var timeToRefresh = 30;
 
 var currentMatch = 1;
-var year = (new Date()).getFullYear();
+var year = 2017;//(new Date()).getFullYear();
 var eventKey = "ctwat";
 var teamNumber = 4557;
 
@@ -81,8 +81,8 @@ function validateEntries() {
 	var enteredNumber = document.getElementById("teamNumEntry").value;
 	if(/^[0-9]{1,4}$/.test(enteredNumber)) { // If it's a valid 1 to 4-digit number
 		var teamRequest = new XMLHttpRequest(),
-			response,
-			isParticipating = false;
+			response;
+		
 		teamRequest.open("GET", TBAapiBaseLink + "team/frc" + enteredNumber + "/years_participated", true);
 		teamRequest.setRequestHeader("X-TBA-App-Id", appID);
 		
@@ -90,15 +90,18 @@ function validateEntries() {
 		
 		teamRequest.onreadystatechange = function(e) {
 			
-			if (this.readyState === XMLHttpRequest.DONE) {
+			if (this.readyState == XMLHttpRequest.DONE) {
 				response = JSON.parse(teamRequest.response);
-				
+				console.log(response.length);
 				for(var i = 0; i < response.length; i++) {
-					if(response[i] === year) {isParticipating=true;}
+					console.log(response[i] === year);
+					if(response[i] === year) {
+						teamNumber = parseInt(enteredNumber);
+						console.log(teamNumber);
+						document.getElementById("choices").submit();
+					}
 				}
 			}
 		}
 	}
-	//TODO: fix how to get isParticipating to wait for request to come through
-	return isParticipating;
 }
