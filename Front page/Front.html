@@ -19,6 +19,21 @@
 			</select>
 			<button type="button" id="submitButton" onclick="validateEntries()">View Schedule</button>
 		</form>
-		<div id="footnoteInfo"></div>
+		<div id="errorDiv">
+			<p class="errorMessage" id="noTeamNum">You didn't enter a team number. Please enter a team number and try again.</p>
+			<br>
+			<p class="errorMessage" id="invalidTeamEntry">You didn't enter a valid 1-4 digit team number.</p>
+			<br>
+			<p class="errorMessage" id="noEvent">You didn't choose an event. Please choose an event and try again.</p>
+			<br>
+			<p class="errorMessage" id="inactiveTeam">The team you choose is not participating this year. Please enter an active team's number.</p>
+		</div>
+		<div id="footnotes">
+			<div id="devInfo"><p>Developed by Mark Lavrentyev</p></div>
+			<div id="loadingDiv">
+				<div id="loaderContainer"><div id="loader"></div></div>
+				<p id="loadingText">Loading...</p>
+			</div>
+		</div>
 	</body>
 </html>

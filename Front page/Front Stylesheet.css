@@ -86,4 +86,76 @@ option:hover {
 	
 	display: block;
 }
+#errorDiv {
+	text-align: center;
+	border: 2px solid black;
+	background-color: white;
+	opacity: 0.8;
+	filter: alpha(opacity=60);
+	margin: 100px;
+	width: auto;
+	
+	/*display: none;*/
+}
 
+.errorMessage {
+	color: red;
+	font-weight: 600;
+	font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	display: none;
+	margin: 10px 10px 10px 10px;
+
+}
+
+#footnotes {
+	position: fixed;
+	opacity: 40%;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 75px;
+	font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	display: table;
+	font-weight: 600;
+	background-color: #80e5ff; 
+	
+	border-top: solid 3px #B3B3B3;
+}
+#devInfo {
+	vertical-align: middle;
+	display: table-cell;
+}
+#loadingDiv {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	vertical-align: middle;
+	display: table-cell;
+	bottom: 15px;
+}
+#loaderContainer {
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	padding: 10px 10px 10px 10px;
+}
+#loader {
+	
+	border: 4px solid #f3f3f3;
+    border-top: 4px solid blue;
+	border-bottom: 4px solid red;
+    border-radius: 50%;
+    width: 12px;
+    height: 10px;
+    animation: spin 2s linear infinite;
+	
+	display: inline-block;
+}
+@keyframes spin {
+	 0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#loadingText {
+	vertical-align: middle;
+	display: table-cell;
+}
