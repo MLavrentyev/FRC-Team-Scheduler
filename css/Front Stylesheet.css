@@ -44,7 +44,7 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background: url(dropArrow.ico) 96% / 15% no-repeat #2380DC;
+	background: url(../img/dropArrow.ico) 96% / 15% no-repeat #2380DC;
 	background-size: 20px auto;
 	
 	display: inline-block;
@@ -80,7 +80,7 @@ option:hover {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background: url(first.ico) 96% / 15% no-repeat #2380DC;
+	background: url(../img/first.ico) 96% / 15% no-repeat #2380DC;
 	
 	margin: auto;
 	
