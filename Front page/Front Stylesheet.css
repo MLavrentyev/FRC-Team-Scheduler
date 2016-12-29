@@ -7,7 +7,6 @@ body {
 	font: 40px "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 form {
-	
 }
 #teamNumLabel {
 	font: 20px "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -21,6 +20,8 @@ form {
 	height: 25px;
 	border: none;
 	background-color: #E6E6E6;
+	
+	display: inline-block;
 }
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
@@ -45,6 +46,8 @@ select {
 	appearance: none;
 	background: url(dropArrow.ico) 96% / 15% no-repeat #2380DC;
 	background-size: 20px auto;
+	
+	display: inline-block;
 } 
 /*target Internet Explorer 9 and Internet Explorer 10:*/
 @media screen and (min-width:0\0) { 
@@ -78,7 +81,9 @@ option:hover {
 	-moz-appearance: none;
 	appearance: none;
 	background: url(first.ico) 96% / 15% no-repeat #2380DC;
-}
-form {
+	
+	margin: auto;
+	
 	display: block;
 }
+
