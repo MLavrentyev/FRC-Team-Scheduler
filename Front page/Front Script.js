@@ -31,6 +31,8 @@ function getAllEvents() {
 function validateEntries() {
 	var enteredNumber = document.getElementById("teamNumEntry").value;
 	var enteredEvent = document.getElementById("eventSelector").value;
+	
+	
 	if(/^[0-9]{1,4}$/.test(enteredNumber) && enteredEvent !== "") { // If it's a valid 1 to 4-digit number and valid event choice
 		var teamRequest = new XMLHttpRequest(),
 			response;
@@ -52,7 +54,14 @@ function validateEntries() {
 						document.getElementById("choices").submit();
 					}
 				}
+				document.getElementById("inactiveTeam").style.display = "inline-block";
 			}
+		}
+	}
+	else {
+		document.getElementById("invalidTeamEntry").style.display = "inline-block";
+		if(document.getElementById("eventSelector").value == "") {
+			document.getElementById("noEvent").style.display = "inline-block";
 		}
 	}
 }
