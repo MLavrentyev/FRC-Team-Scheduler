@@ -17,10 +17,12 @@ function getAllEvents() {
 			response = JSON.parse(allEventsRequest.response);
 			for(var i = 0; i < response.length; i +=1) {
 				var selector = document.getElementById("eventSelector");
-				if(response[i].short_name == null) {
-					selector.options[selector.options.length] = new Option(response[i].name, response[i].event_code);
-				} else {
-					selector.options[selector.options.length] = new Option(response[i].short_name, response[i].event_code);
+				if(response[i].official) {
+					if(response[i].short_name == null) {
+						selector.options[selector.options.length] = new Option(response[i].name, response[i].event_code);
+					} else {
+						selector.options[selector.options.length] = new Option(response[i].short_name, response[i].event_code);
+					}
 				}
 			}
 		}
