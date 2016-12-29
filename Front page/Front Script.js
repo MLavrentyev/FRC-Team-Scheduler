@@ -5,6 +5,7 @@ var year = (new Date()).getFullYear();
 
 function getAllEvents() {
 	"use strict";
+	document.getElementById("loadingDiv").style.visibility = "visible";
 	var allEventsRequest = new XMLHttpRequest(),
 		response;
 	allEventsRequest.open("GET", TBAapiBaseLink + "events/" + year);
@@ -25,6 +26,7 @@ function getAllEvents() {
 					}
 				}
 			}
+			document.getElementById("loadingDiv").style.visibility = "hidden";
 		}
 	}
 }
