@@ -1,28 +1,50 @@
 body {
 	background: #80e5ff;
+	text-align: center;
 }
 #titleHeader {
 	text-align: center;
 	font: 40px "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-#teamNumEntry {
+form {
 	
 }
+#teamNumLabel {
+	font: 20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 800;
+}
+#teamNumEntry {
+	font: 20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 700;
+	text-align: center;
+	width: 75px;
+	height: 25px;
+	border: none;
+	background-color: #E6E6E6;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input[type=number] {
+    -moz-appearance:textfield;
+}
 select {
 	margin: 50px;
-	border: 1px solid #111;
 	background: transparent;
-	width: 150px;
+	width: 300px;
 	padding: 5px 35px 5px 5px;
 	font-size: 16px;
 	color: white;
-	border: 1px solid #ccc;
+	border: 1px solid #7BB3EA;
 	height: 34px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	background: url(dropArrow.ico) 96% / 15% no-repeat #2380DC;
+	background-size: 20px auto;
 } 
 /*target Internet Explorer 9 and Internet Explorer 10:*/
 @media screen and (min-width:0\0) { 
@@ -31,8 +53,17 @@ select {
 		padding: 5px;
 	}
 }
+option {
+	background-color: white;
+	color: black;
+	font: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+option:hover {
+	background-color: #999999;
+	color: black;
+}
 
-#submitDiv button {
+#submitButton {
 	margin: 50px;
 	border: 1px solid #111;
 	background: #2380DC;
@@ -41,10 +72,13 @@ select {
 	font-size: 16px;
 	text-align: center;
 	color: white;
-	border: 1px solid #ccc;
+	border: 1px solid #7BB3EA;
 	height: 34px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	background: url(first.ico) 96% / 15% no-repeat #2380DC;
+}
+form {
+	display: block;
 }
