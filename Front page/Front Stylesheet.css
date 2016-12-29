@@ -95,7 +95,7 @@ option:hover {
 	margin: 100px;
 	width: auto;
 	
-	/*display: none;*/
+	display: none;
 }
 
 .errorMessage {

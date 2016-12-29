@@ -34,6 +34,11 @@ function validateEntries() {
 	var enteredNumber = document.getElementById("teamNumEntry").value;
 	var enteredEvent = document.getElementById("eventSelector").value;
 	
+	var errorMessages = document.getElementsByClassName("errorMessage");
+	for(var i=0; i<errorMessages.length; i++) {
+		errorMessages[i].style.display = "none";
+	} // Make all invisible to start
+	document.getElementById("errorDiv").style.display = "none";
 	
 	if(/^[0-9]{1,4}$/.test(enteredNumber) && enteredEvent !== "") { // If it's a valid 1 to 4-digit number and valid event choice
 		var teamRequest = new XMLHttpRequest(),
@@ -56,15 +61,18 @@ function validateEntries() {
 						document.getElementById("choices").submit();
 					}
 				}
-				document.getElementById("inactiveTeam").style.display = "inline-block";
+				document.getElementById("inactiveTeam").style.display = "list-item";
+				document.getElementById("errorDiv").style.display = "block";
 			}
 		}
 	}
-	else {
-		document.getElementById("invalidTeamEntry").style.display = "inline-block";
-		if(document.getElementById("eventSelector").value == "") {
-			document.getElementById("noEvent").style.display = "inline-block";
-		}
+	else if(!/^[0-9]{1,4}$/.test(enteredNumber)){
+		document.getElementById("invalidTeamEntry").style.display = "list-item";
+		document.getElementById("errorDiv").style.display = "block";
+	}
+	if(enteredEvent == "") {
+		document.getElementById("noEvent").style.display = "list-item";
+		document.getElementById("errorDiv").style.display = "block";
 	}
 }
 function startFront() {
