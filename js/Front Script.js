@@ -8,10 +8,12 @@ function getAllEvents() {
 	document.getElementById("loadingDiv").style.visibility = "visible";
 	var allEventsRequest = new XMLHttpRequest(),
 		response;
-	allEventsRequest.open("GET", TBAapiBaseLink + "events/" + year);
+
+	allEventsRequest.open("GET", TBAapiBaseLink + "team/frc" + document.getElementById("teamNumEntry").value + "/" + year + "/events");
 	allEventsRequest.setRequestHeader("X-TBA-App-Id", appID);
 	
 	allEventsRequest.send();
+	console.log("Sent");
 	
 	allEventsRequest.onreadystatechange = function(e) {
 		if(this.readyState === XMLHttpRequest.DONE) {
@@ -26,6 +28,7 @@ function getAllEvents() {
 					}
 				}
 			}
+			console.log("Gotten");
 			document.getElementById("loadingDiv").style.visibility = "hidden";
 		}
 	}
@@ -74,7 +77,4 @@ function validateEntries() {
 		document.getElementById("noEvent").style.display = "list-item";
 		document.getElementById("errorDiv").style.display = "block";
 	}
-}
-function startFront() {
-	getAllEvents();
 }
