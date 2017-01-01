@@ -126,6 +126,8 @@ option:hover {
 	display: table-cell;
 }
 #loadingDiv {
+	visibility: hidden;
+	
 	position: fixed;
 	bottom: 5px;
 	right: 5px;
@@ -133,15 +135,13 @@ option:hover {
 	display: table-cell;
 	bottom: 15px;
 }
-#loaderContainer {
+#loaderContainer {	
 	display: table-cell;
 	vertical-align: middle;
 	position: relative;
 	padding: 10px 10px 10px 10px;
 }
-#loader {
-	visibility: hidden;
-	
+#loader {	
 	border: 4px solid #f3f3f3;
     border-top: 4px solid blue;
 	border-bottom: 4px solid red;
