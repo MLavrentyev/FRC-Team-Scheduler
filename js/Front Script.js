@@ -28,11 +28,22 @@ function getAllEvents() {
 					}
 				}
 			}
-			console.log("Gotten");
 			document.getElementById("loadingDiv").style.visibility = "hidden";
 		}
 	}
+	var selectBox = document.getElementById("eventSelector");
+	for(var i=selectBox.options.length - 1; i >= 0; i--) {
+		selectBox.remove(i); // Remove all of the old events
+	}
+	var defaultOption = new Option("Choose Event","")
+	defaultOption.setAttribute("style","display:none");
+	defaultOption.setAttribute("disabled","disabled");
+	defaultOption.setAttribute("selected","selected");
+	
+	selectBox.options[selectBox.options.length] = defaultOption;
 }
+
+
 function validateEntries() {
 	var enteredNumber = document.getElementById("teamNumEntry").value;
 	var enteredEvent = document.getElementById("eventSelector").value;
