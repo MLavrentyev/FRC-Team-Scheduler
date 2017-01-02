@@ -47,6 +47,11 @@ tr:nth-child(1) td:nth-child(7){
 tr:nth-child(1) {
     font-style: italic;
 }
+#concludedMessage {
+	font: 24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #3c3c3c;
+	font-weight: 600;
+}
 #footnotes {
 	position: fixed;
 	background-color: white;
