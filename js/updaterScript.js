@@ -143,10 +143,8 @@ function refreshSchedule() {
 					timeLeft.innerHTML = minStr + ":" + secStr;
 				}
 			}
-			if(document.getElementById("scheduleTable").rows.length === 1 && allMatches[allMatches.length-1].time < new Date().getTime()/1000) {
+			if(document.getElementById("scheduleTable").rows.length === 1) {
 				document.getElementById("concludedMessage").style.display = "block";
-			} else if(document.getElementById("scheduleTable").rows.length === 1) {
-				document.getElementById("noMatchesMessage").style.display = "block";
 			}
 		}
 	}
