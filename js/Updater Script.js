@@ -6,7 +6,7 @@ var lastModified;
 
 var currentMatch = 1;
 var year = 2016//(new Date()).getFullYear();
-var eventKey = "cthar"; // Key without the year, e.g. ctwat
+var eventKey = "ctwat"; // Key without the year, e.g. ctwat
 var teamNumber = 4557;
 
 // Main page functions
@@ -118,7 +118,31 @@ function refreshSchedule() {
 				blue1Cell.innerHTML = allMatches[i].alliances.blue.teams[0].replace("frc","");
 				blue2Cell.innerHTML = allMatches[i].alliances.blue.teams[1].replace("frc","");
 				blue3Cell.innerHTML = allMatches[i].alliances.blue.teams[2].replace("frc","");
-
+				
+				var timeLeft = addedRow.insertCell();
+				var sec = (allMatches[i].time - 1457199840);
+				var min = Math.floor(sec/60);
+				sec -= 60*min;
+				var hrs = Math.floor(min/60);
+				min -= 60*hrs;
+				
+				var secStr = sec,
+					minStr = min,
+					hrsStr = hrs;
+				
+				if(sec < 0 || min < 0 || hrs < 0) {
+					addedRow.parentNode.removeChild(addedRow);
+				} else if(sec < 10) {
+					secStr = "0" + secStr;
+				}
+				if(min < 10) {
+					minStr = "0" + minStr;
+				}
+				if(hrs > 0) {
+					timeLeft.innerHTML = hrsStr + ":" + minStr + ":" + secStr;
+				} else {
+					timeLeft.innerHTML = minStr + ":" + secStr;
+				}
 			}
 		}
 	}
