@@ -1,6 +1,6 @@
 var appID = "mlavrentyev:liveMatchSchedule:v1";
 var TBAapiBaseLink = "https://www.thebluealliance.com/api/v2/";
-var year = (new Date()).getFullYear();
+var year = 2016//(new Date()).getFullYear();
 
 
 function getAllEvents() {

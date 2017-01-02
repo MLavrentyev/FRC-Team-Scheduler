@@ -5,7 +5,7 @@ var timeToRefresh = 30;
 var lastModified;
 
 var currentMatch = 1;
-var year = (new Date()).getFullYear();
+var year = 2016//(new Date()).getFullYear();
 var eventKey = "cthar"; // Key without the year, e.g. ctwat
 var teamNumber = 4557;
 
