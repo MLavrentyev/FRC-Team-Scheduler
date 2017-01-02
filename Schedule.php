@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="css/scheduleStylesheet.css">
         <title>FRC Live Match Schedule</title>
 		<meta charset="utf-8" />
-		<script src="js/updaterScript.js" async></script>
+		<script src="js/updaterScript.js"></script>
 		<script type="text/javascript">
 			teamNumber = <?php echo $teamNum ?>;
 			eventKey = "<?php echo $eventCode ?>";
