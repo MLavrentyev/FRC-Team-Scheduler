@@ -132,12 +132,11 @@ function refreshSchedule() {
 				
 				if(sec < 0 || min < 0 || hrs < 0) {
 					addedRow.parentNode.removeChild(addedRow);
-				} else if(sec < 10) {
-					secStr = "0" + secStr;
-				}
-				if(min < 10) {
-					minStr = "0" + minStr;
-				}
+				} 
+				
+				if(sec < 10) secStr = "0" + secStr;
+				if(min < 10 && hrs > 0) minStr = "0" + minStr;
+				
 				if(hrs > 0) {
 					timeLeft.innerHTML = hrsStr + ":" + minStr + ":" + secStr;
 				} else {
@@ -159,6 +158,59 @@ function refreshTimer() {
 	}
 	document.getElementById("refreshTime").innerHTML = "Refreshing in: " + timeToRefresh + " seconds";
 	timeToRefresh -= 1;
+	
+	//Now, modify time left in schedule
+	for(var i = 1; i < document.getElementById("scheduleTable").rows.length; i++) {
+		var timeCell = document.getElementById("scheduleTable").rows[i].cells[7];
+		
+		var splitTimeStr = timeCell.innerHTML.split(":"); // Splits it by the colons
+		if (splitTimeStr.length === 3) { //If hours are included
+			var hrs = parseInt(splitTimeStr[0]),
+				min = parseInt(splitTimeStr[1]),
+				sec = parseInt(splitTimeStr[2]);
+			
+			sec--;
+			if(sec < 0) {
+				sec = 59;
+				min--;
+			}
+			if(min < 0) {
+				min = 59;
+				hrs--;
+			}
+			var hrsStr = hrs,
+				minStr = min,
+				secStr = sec;
+			
+			if(sec < 10) secStr = "0" + sec;
+			if(min < 10 && hrs > 0) minStr = "0" + min;
+			
+			if(hrs === 0) {
+				timeCell.innerHTML = minStr + ":" + secStr;
+			} else {
+				timeCell.innerHTML = hrsStr + ":" + minStr + ":" + secStr;
+			}
+		} else {
+			var min = parseInt(splitTimeStr[0]),
+				sec = parseInt(splitTimeStr[1]);
+			
+			sec--;
+			if(sec < 0) {
+				sec = 59;
+				min--;
+			}
+			var secStr = sec;
+			if(sec < 10) secStr = "0" + sec;
+			
+			if(min < 0) {
+				var row = document.getElementById("scheduleTable").rows[i];
+				row.parentNode.removeChild(row);
+				i--;
+			} else {
+				timeCell.innerHTML = min + ":" + secStr;
+			}
+		}
+	}
 	
 	setTimeout(refreshTimer, 1000);
 }
