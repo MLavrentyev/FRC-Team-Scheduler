@@ -13,8 +13,8 @@
 		</div>
 		<form id="choices" action="Schedule.html" method="GET">
 			<label for="teamNumEntry" id="teamNumLabel">Team Number:</label>
-			<input type="number" id="teamNumEntry" min="1" max="9999" onchange="getAllEvents();" placeholder="4557"/>
-			<select id="eventSelector">
+			<input name="teamNum" type="number" id="teamNumEntry" min="1" max="9999" onchange="getAllEvents();" placeholder="4557"/>
+			<select name="eventCode" id="eventSelector">
 				<option value="" style="display:none" disabled="disabled" selected="selected">Choose event</option>
 			</select>
 			<button type="button" id="submitButton" onclick="validateEntries()">View Schedule</button>
