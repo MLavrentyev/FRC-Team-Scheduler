@@ -120,7 +120,7 @@ function refreshSchedule() {
 				blue3Cell.innerHTML = allMatches[i].alliances.blue.teams[2].replace("frc","");
 				
 				var timeLeft = addedRow.insertCell();
-				var sec = (allMatches[i].time - 1457199840);
+				var sec = (allMatches[i].time - new Date().getTime()/1000);
 				var min = Math.floor(sec/60);
 				sec -= 60*min;
 				var hrs = Math.floor(min/60);
