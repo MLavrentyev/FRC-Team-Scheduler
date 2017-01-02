@@ -1,7 +1,7 @@
 var frcApiBaseLink = "https://www.frc-api.firstinspires.org/v2.0/";
 var TBAapiBaseLink = "https://www.thebluealliance.com/api/v2/";
 var appID = "mlavrentyev:liveMatchSchedule:v1";
-var timeToRefresh = 30;
+var timeToRefresh = 0;
 var lastModified;
 
 var currentMatch = 1;
@@ -142,6 +142,11 @@ function refreshSchedule() {
 				} else {
 					timeLeft.innerHTML = minStr + ":" + secStr;
 				}
+			}
+			if(document.getElementById("scheduleTable").rows.length === 1 && allMatches[allMatches.length-1].time < new Date().getTime()/1000) {
+				document.getElementById("concludedMessage").style.display = "block";
+			} else if(document.getElementById("scheduleTable").rows.length === 1) {
+				document.getElementById("noMatchesMessage").style.display = "block";
 			}
 		}
 	}

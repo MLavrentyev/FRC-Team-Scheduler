@@ -34,6 +34,8 @@
                     </tr>
                 </tbody>
             </table>
+			<p style="display:none" id="concludedMessage">The event has concluded</p>
+			<p style="display:none" id="noMatchesMessage">The event's matches have not yet been posted</p>
         </div>
         <div id="footnotes">
             <div id="eventNameDiv">
