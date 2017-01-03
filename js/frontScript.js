@@ -90,3 +90,10 @@ function validateEntries() {
 		document.getElementById("errorDiv").style.display = "block";
 	}
 }
+function startOnFrontLoad() {
+	document.getElementById("teamNumEntry").onkeyup = function(event) {
+		if(event.keyCode == 13) {
+			validateEntries();
+		}
+	}
+}
