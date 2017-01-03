@@ -77,6 +77,7 @@ function validateEntries() {
 				if(inactive) {
 					document.getElementById("inactiveTeam").style.display = "list-item";
 					document.getElementById("errorDiv").style.display = "block";
+					return false;
 				}
 			}
 		}
@@ -84,12 +85,13 @@ function validateEntries() {
 	else if(!/^[0-9]{1,4}$/.test(enteredNumber)){
 		document.getElementById("invalidTeamEntry").style.display = "list-item";
 		document.getElementById("errorDiv").style.display = "block";
+		return false;
 	}
 	if(enteredEvent == "") {
 		document.getElementById("noEvent").style.display = "list-item";
 		document.getElementById("errorDiv").style.display = "block";
+		return false;
 	}
-	return false;
 }
 function startOnFrontLoad() {
 	document.getElementById("teamNumEntry").onkeyup = function(event) {
