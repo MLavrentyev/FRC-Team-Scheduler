@@ -69,8 +69,8 @@ function validateEntries() {
 				response = JSON.parse(teamRequest.response);
 				var inactive = true;
 				for(var i = 0; i < response.length; i++) {
-					if(response[i] === year) {				
-						document.getElementById("choices").submit();
+					if(response[i] === year) {
+						return true;
 						inactive = false;
 					}
 				}
@@ -89,6 +89,7 @@ function validateEntries() {
 		document.getElementById("noEvent").style.display = "list-item";
 		document.getElementById("errorDiv").style.display = "block";
 	}
+	return false;
 }
 function startOnFrontLoad() {
 	document.getElementById("teamNumEntry").onkeyup = function(event) {
