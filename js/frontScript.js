@@ -7,9 +7,10 @@ function getAllEvents() {
 	"use strict";
 	document.getElementById("loadingDiv").style.visibility = "visible";
 	var allEventsRequest = new XMLHttpRequest(),
-		response;
+		response,
+		teamNum = parseInt(document.getElementById("teamNumEntry").value);
 
-	allEventsRequest.open("GET", TBAapiBaseLink + "team/frc" + document.getElementById("teamNumEntry").value + "/" + year + "/events");
+	allEventsRequest.open("GET", TBAapiBaseLink + "team/frc" + teamNum + "/" + year + "/events");
 	allEventsRequest.setRequestHeader("X-TBA-App-Id", appID);
 	
 	allEventsRequest.send();
