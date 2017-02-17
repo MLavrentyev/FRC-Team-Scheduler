@@ -2,6 +2,8 @@ var appID = "mlavrentyev:liveMatchSchedule:v1";
 var TBAapiBaseLink = "https://www.thebluealliance.com/api/v2/";
 var year = (new Date()).getFullYear();
 
+var officialEventsOnly = false;
+
 
 function getAllEvents() {
 	"use strict";
@@ -21,7 +23,7 @@ function getAllEvents() {
 			response = JSON.parse(allEventsRequest.response);
 			for(var i = 0; i < response.length; i +=1) {
 				var selector = document.getElementById("eventSelector");
-				if(response[i].official) {
+				if(response[i].official || !officialEventsOnly) {
 					if(response[i].short_name == null) {
 						selector.options[selector.options.length] = new Option(response[i].name, response[i].event_code);
 					} else {
