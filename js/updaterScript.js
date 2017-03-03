@@ -1,7 +1,7 @@
 var frcApiBaseLink = "https://www.frc-api.firstinspires.org/v2.0/";
 var TBAapiBaseLink = "https://www.thebluealliance.com/api/v2/";
 var appID = "mlavrentyev:liveMatchSchedule:v1";
-var timeToRefresh = 0;
+var timeToRefresh = 30;
 var lastModified;
 
 var currentMatch = 1;
