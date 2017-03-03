@@ -79,6 +79,9 @@ function refreshSchedule() {
 			lastModified = httpsRequest.getResponseHeader("Last-Modified");
 			var allMatches = JSON.parse(httpsRequest.response);
 			allMatches = sortAllMatches(allMatches);
+			for(var row=1; row<document.getElementById("scheduleTable").rows.length; row++) {
+				document.getElementById("scheduleTable").deleteRow(row);
+			}
 			for(var i=0; i<allMatches.length; i++) {
 				var table = document.getElementById("scheduleTable");
 				var addedRow = table.insertRow();
