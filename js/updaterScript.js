@@ -122,13 +122,13 @@ function refreshSchedule() {
 				blue2Cell.innerHTML = allMatches[i].alliances.blue.teams[1].replace("frc","");
 				blue3Cell.innerHTML = allMatches[i].alliances.blue.teams[2].replace("frc","");
 				
-				red1Cell.style.color = red1Cell.innerHTML == teamNumber ? "#0000b3" : "#000000";
-				red2Cell.style.color = red2Cell.innerHTML == teamNumber ? "#0000b3" : "#000000";
-				red3Cell.style.color = red3Cell.innerHTML == teamNumber ? "#0000b3" : "#000000";
+				red1Cell.style.color = red1Cell.innerHTML == teamNumber ? "#c80000" : "#000000";
+				red2Cell.style.color = red2Cell.innerHTML == teamNumber ? "#c80000" : "#000000";
+				red3Cell.style.color = red3Cell.innerHTML == teamNumber ? "#c80000" : "#000000";
 				
-				blue1Cell.style.color = blue1Cell.innerHTML == teamNumber ? "#b30000" : "#000000";
-				blue2Cell.style.color = blue2Cell.innerHTML == teamNumber ? "#b30000" : "#000000";
-				blue3Cell.style.color = blue3Cell.innerHTML == teamNumber ? "#b30000" : "#000000";
+				blue1Cell.style.color = blue1Cell.innerHTML == teamNumber ? "0000c8" : "#000000";
+				blue2Cell.style.color = blue2Cell.innerHTML == teamNumber ? "#0000c8" : "#000000";
+				blue3Cell.style.color = blue3Cell.innerHTML == teamNumber ? "#0000c8" : "#000000";
 
 				
 				var timeLeft = addedRow.insertCell();
