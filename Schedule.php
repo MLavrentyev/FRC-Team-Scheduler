@@ -18,6 +18,7 @@
     <body onload="startOnMainPageLoad()">
         <div id="header">
             <h1 id="title"></h1>
+			<a id="backButton" href="index.html"><img border="0" alt="Back" src="img/backArrow.png" width="20" height="20"></a>
         </div>
         <div id="dataSection">
             <table>

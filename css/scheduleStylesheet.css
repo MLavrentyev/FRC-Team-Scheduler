@@ -1,4 +1,8 @@
-
+#backButton {
+	position: fixed;
+	left: 20px;
+	top: 20px;
+}
 #dataSection {
 	width: 100%;
 	text-align: center;
